@@ -21,4 +21,9 @@ class Sport < ApplicationRecord
         inverse_of: :sport
     )
 
+    def self.find_sports_players(sport_name)
+        sport = self.where("sport_name = ?", sport_name.capitalize)
+        return sport[0].average_age, sport[0].players.reverse
+    end
+
 end
