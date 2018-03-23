@@ -13,5 +13,12 @@
 #
 
 class Player < ApplicationRecord
-    
+    validates :sport_id, presence: true
+
+    belongs_to(
+        :sport
+        primary_key: :id,
+        foreign_key: :sport_id,
+        class_name: :Sport
+    )
 end

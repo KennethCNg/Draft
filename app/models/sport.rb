@@ -10,4 +10,14 @@
 #
 
 class Sport < ApplicationRecord
+    validates :sport_name, :average_age, presence: true
+    validates :sport_name, uniqueness: true
+
+    has_many(
+        :players,
+        primary_key: :id,
+        foreign_key: :sport_id,
+        class_name: :Player
+    )
+
 end
