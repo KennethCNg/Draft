@@ -1,6 +1,6 @@
 class Api::SportsController < ApplicationController
 
-    # I was wondering if instead of having these three lines, I should have them in the cocnern so all the logic is there. 
+    # I was wondering if instead of having these three lines, I should have them in the concern so all the logic is there. 
     # I left them like this so it's more explicit as to what is happening when #index is being called. Would love feedback
     # as to whether this is the right move.
     def index

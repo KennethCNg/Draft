@@ -12,7 +12,7 @@ module AvgAgeByPos
 
 
         # input is an array of players, it returns a hash of positions pointing to the total number of players at that position and the total ages at that position
-        # ex. {
+        # INPUT ex. {
         #       "SF" => 26,0978,
         #       "PF" => 28.1312
         #     }
@@ -31,13 +31,12 @@ module AvgAgeByPos
                         }
                     end
                 end
-            end
-            
+            end    
             create_avg_age_hash(positions_hash)
         end
     
         # helper method for #calculate_avg_age_by_position
-        # ex. {"SF" => {
+        # OUTPUT ex. {"SF" => {
         #       total_players_at_position => 123,
         #       total_age => 4567
         # }}
