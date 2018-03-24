@@ -20,7 +20,7 @@ The data being persisted is coming from the CBS api and saved in a json file und
 ### Getting Started
 
 1. Install dependencies by running `bundle install`
-2. Create and seed your database by running `bundle exec rails db:create db:migrate db:seed`
+2. Create and seed your database by running `bundle exec rake db:create db:migrate db:seed`
 3. Start your server by running `bundle exec rails s`
 4. Go to `http://localhost:3000/api/:sport_name/` (sport_name currently only works for basketball, baseball, and football)
 
@@ -38,7 +38,7 @@ Players belong to a Sport and therefore it holds the Sport's foreign key. The fo
 
 Note: I was very torn between this structure and another. The other would be having each sport as its own table, and thus the Player's table would have a polymorphic association and belong to each of the Baskeball, Baseball, and Football tables. However, I felt this method kept my code more DRY and so the better choice.
 
-I chose this set-up because any additional sports that need to be added, would be a simple addition to the Sport table, its name brief would be one line in the NAME_BRIEF_DICTIONARY. The other schema would involve me creating another model, and another controller just to add another sport.
+Furthermore any additional sports that need to be added, would be a simple addition to the Sport table, its name brief would be one line in the NAME_BRIEF_DICTIONARY. The other schema would involve me creating another model, and another controller just to add another sport. It would making scaling much easier.
 
 Sports
 <table>

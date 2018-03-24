@@ -38,6 +38,14 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
 
+  # My testing gem
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem "factory_bot_rails", "~> 4.0"
+  # gives better error messages than regular rspec  
+  gem 'shoulda-matchers'
+  gem 'faker'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

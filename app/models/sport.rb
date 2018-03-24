@@ -9,8 +9,7 @@
 #
 
 class Sport < ApplicationRecord
-    validates :sport_name, presence: true
-    validates :sport_name, uniqueness: true
+    validates :sport_name, presence: true, uniqueness: true
 
     has_many(
         :players,
