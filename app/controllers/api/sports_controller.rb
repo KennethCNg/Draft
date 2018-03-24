@@ -7,5 +7,4 @@ class Api::SportsController < ApplicationController
 
         render json: json_obj
     end
-
 end
