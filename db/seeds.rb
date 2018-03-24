@@ -14,21 +14,10 @@ baseball_file = JSON.parse(File.read('./app/assets/javascripts/baseball.json'))
 football_file = JSON.parse(File.read('./app/assets/javascripts/football.json'))
 
 # BASKETBALL
-basketball_avg_age = 0.00
-statistically_significant_ages = 0
-
 basketball = Sport.new({
-    "sport_name" => "Basketball",
-    "average_age" => "temp"
+    "sport_name" => "Basketball"
 })
-
-
-basketball_file["body"]["players"].each do |player|
-    if player["age"]
-        basketball_avg_age += player["age"]
-        statistically_significant_ages += 1
-    end
-
+basketball_file["body"]["players"].each do |player|         
     basketball.players << Player.new({
         "first_name" => player["firstname"],
         "last_name" => player["lastname"],
@@ -38,26 +27,15 @@ basketball_file["body"]["players"].each do |player|
     })
 end
 
-basketball["average_age"] = basketball_avg_age / statistically_significant_ages
 basketball.save!
 
 # BASEBALL
-
-baseball_avg_age = 0.00
-statistically_significant_ages = 0
-
 baseball = Sport.new({
-    "sport_name" => "Baseball",
-    "average_age" => "temp"
+    "sport_name" => "Baseball"
 })
 
 
 baseball_file["body"]["players"].each do |player|
-    if player["age"]
-        baseball_avg_age += player["age"]
-        statistically_significant_ages += 1
-    end
-
     baseball.players << Player.new({
         "first_name" => player["firstname"],
         "last_name" => player["lastname"],
@@ -67,26 +45,14 @@ baseball_file["body"]["players"].each do |player|
     })
 end
 
-baseball["average_age"] = baseball_avg_age / statistically_significant_ages
-baseball.save
+baseball.save!
 
 # FOOTBALL
-
-football_avg_age = 0.00
-statistically_significant_ages = 0
-
 football = Sport.new({
-    "sport_name" => "Football",
-    "average_age" => "temp"
+    "sport_name" => "Football"
 })
 
-
 football_file["body"]["players"].each do |player|
-    if player["age"]
-        football_avg_age += player["age"]
-        statistically_significant_ages += 1
-    end
-
     football.players << Player.new({
         "first_name" => player["firstname"],
         "last_name" => player["lastname"],
@@ -96,5 +62,4 @@ football_file["body"]["players"].each do |player|
     })
 end
 
-football["average_age"] = football_avg_age / statistically_significant_ages
 football.save!
