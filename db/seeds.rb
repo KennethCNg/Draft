@@ -68,7 +68,7 @@ baseball_file["body"]["players"].each do |player|
 end
 
 baseball["average_age"] = baseball_avg_age / statistically_significant_ages
-baseball.save!
+baseball.save
 
 # FOOTBALL
 
