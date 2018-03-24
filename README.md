@@ -1,6 +1,6 @@
 # Draft
 
-DraftCC is an API that displays a sport's professional players in a json list of objects:
+Draft is an API that displays a sport's professional players in a json list of objects:
 
 ```js
     [ { 
@@ -36,9 +36,9 @@ The schema consists of just a Sports table and Players table. The sport_name col
 
 Players belong to a Sport and therefore it holds the Sport's foreign key. The foreign_key has been indexed. If the Player's table gets too large, the table could be sharded and split horizontally to separate by sport.
 
-Note: I was very torn between this structure and another. The other would have each sport has its table, and thus the Player's table would have a polymorphic association and belong to each of the Baskeball, Baseball, and Football tables. However, I noticed that the only real difference in logic would be the name_brief. I would love some feedback as to whether the name_brief_dictionary is something you would do as well. 
+Note: I was very torn between this structure and another. The other would be having each sport as its own table, and thus the Player's table would have a polymorphic association and belong to each of the Baskeball, Baseball, and Football tables. However, I felt this method kept my code more DRY and so the better choice.
 
-I chose this set-up because any additional sports that need to be added, would be a simple addition to the Sport table, its name brief would be one line in the NAME_BRIEF_DICTIONARY.
+I chose this set-up because any additional sports that need to be added, would be a simple addition to the Sport table, its name brief would be one line in the NAME_BRIEF_DICTIONARY. The other schema would involve me creating another model, and another controller just to add another sport.
 
 Sports
 <table>
