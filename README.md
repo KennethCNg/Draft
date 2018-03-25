@@ -36,11 +36,7 @@ The schema consists of just a Sports table and Players table. The sport_name col
 
 Players belong to a Sport and therefore the Players table holds the Sport's foreign key. The foreign_key has been indexed. If the Player's table gets too large, the table could be sharded and split horizontally to separate by sport.
 
-Note: I was very torn between this structure and another. The other would be having each sport as its own table, and thus the Player's table would have a polymorphic association and belong to each of the Baskeball, Baseball, and Football tables. 
-
-However, I felt my current method kept my code more DRY and so the better choice. Furthermore any additional sports that need to be added, would be a simple addition to the Sports table. Conversely, the other schema would involve me creating another model, and another controller just to add another sport. It would making scaling much easier.
-
-Lastly, the defining factor between the sports would be the name_brief. I figured a simple concern holding a "name_brief dictionary" would adequately deal with this. My only concern (haha, get it?) would be if the sports table were to grow. The size ofthe dictionary would scale linearly as the sport's table scaled. Although the actual code technically still be O(1) look-up time, managing a hashmap with thousands of lines of sports would be chaotic. Given this potential issue, I think a reasonable fix would be to split this concern by alphabet. Have 26 concerns like NameBriefLtrA, NameBriefLtrB (Baskeball and Baseball would go here), etc and nest it under another folder in the concern folder called NameBriefs.
+Notes: The defining factor between the sports would be the name_brief. I figured a simple concern holding a "name_brief dictionary" would adequately deal with this. My only concern (haha, get it?) would be if the sports table were to grow. The size ofthe dictionary would scale linearly as the sport's table scaled. Although the actual code technically still would be O(1) time, managing a hashmap with thousands of lines of sports would be chaotic. Given this potential issue, I think a reasonable fix would be to split this concern by alphabet. Have 26 concerns such as NameBriefLtrA, NameBriefLtrB (Baskeball and Baseball would go here), etc and nest it under another folder in the concern folder called NameBriefs should suffice.
 
 Sports
 <table>
