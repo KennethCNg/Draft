@@ -10,8 +10,7 @@ module AvgAgeByPos
             return sport, players
         end
 
-
-        # input is an array of players, it returns a hash of positions pointing to the total number of players at that position and the total ages at that position
+        # input is an array of players from the class method find_sport_and_players. It returns a hash of positions pointing to the total number of players at that position and the total ages at that position
         # INPUT ex. {
         #       "SF" => 26,0978,
         #       "PF" => 28.1312

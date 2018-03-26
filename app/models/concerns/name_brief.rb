@@ -2,6 +2,7 @@ module NameBrief
     extend ActiveSupport::Concern
 
     included do
+        # please view readme for my idea on how to scale this module
         NAME_BRIEF_DICTIONARY = {
             "Basketball" => Proc.new { |player| "#{player.first_name} #{player.last_name[0]}." },
             "Baseball" => Proc.new { |player| "#{player.first_name[0]}. #{player.last_name[0]}." },
