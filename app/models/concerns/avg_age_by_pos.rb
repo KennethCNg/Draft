@@ -4,14 +4,14 @@ module AvgAgeByPos
     included do
 
         # this returns an instance of a sport (either basketball, baseball, or football) AND 
-        #an array of players of that sport
+        # an array of players of that sport.
+
         def self.find_sport_and_players(sport_name)
             sport = self.where("sport_name = ?", sport_name.capitalize)[0]
             players = sport.players.sort_by { |player| player.id }
             return sport, players
         end
 
-        # input is an array of players from the class method find_sport_and_players. It returns a hash of positions pointing to the total number of players at that position and the total ages at that position
         # INPUT ex. 
         #   [{
         #       id: 1,
@@ -21,6 +21,13 @@ module AvgAgeByPos
         #       age: 24,
         #       sport_id: 1
         #    }...]
+
+        # OUTPUT ex. 
+        # {"SF" => {
+        #   total_players_at_position => 123,
+        #   total_age => 4567
+        # }}
+
         def calculate_avg_age_by_position(players)
             positions_hash = {}
             players.each do |player|
@@ -41,11 +48,6 @@ module AvgAgeByPos
         end
     
         # helper method for #calculate_avg_age_by_position
-        # OUTPUT ex. 
-        # {"SF" => {
-        #   total_players_at_position => 123,
-        #   total_age => 4567
-        # }}
         def create_avg_age_hash(positions_hash)
             res = {}
             positions_hash.each_key do |position|
