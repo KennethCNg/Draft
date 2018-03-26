@@ -11,8 +11,7 @@ Draft is an API that displays a sport's professional players in a json list of o
         position: "SG",
         age: 24,
         "average_position_age_diff": -2.097609561753
-    }, ... ] 
-} 
+    }, ... ]
 ```
 
 The data being persisted is coming from the CBS api and saved in a json file under `app/assets/javascripts`. This was built using Ruby on Rails and PostgreSQL.
