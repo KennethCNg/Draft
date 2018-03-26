@@ -20,9 +20,12 @@ The data being persisted is coming from the CBS api and saved in a json file und
 ### Getting Started
 
 1. Install dependencies by running `bundle install`
+2. Start your Postgres server
 2. Create and seed your database by running `bundle exec rake db:create db:migrate db:seed`
 3. Start your server by running `bundle exec rails s`
-4. Go to `http://localhost:3000/api/:sport_name/` (sport_name currently only works for basketball, baseball, and football)
+4. Go to `http://localhost:3000/api/sports/:sport_name/` (ex. http://localhost:3000/api/sports/basketball/)
+
+Note: Currently :sport_name only works for basketball, baseball, or football
 
 ### Technologies
 
