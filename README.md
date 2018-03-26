@@ -46,22 +46,18 @@ Sports
   <tr>
     <td>id</td>
     <td>sport_name (string)</td>
-    <td>average_age (float)</td>
   </tr>
   <tr>
     <td>1</td>
     <td>"Basketball"</td>
-    <td>26.097609561753</td>
   </tr>
   <tr>
     <td>2</td>
     <td>"Baseball"</td>
-    <td>25.9142705005325</td>
   </tr>
   <tr>
     <td>3</td>
     <td>"Basketball"</td>
-    <td>25.8789346246973</td>
   </tr>
 </table>
 
