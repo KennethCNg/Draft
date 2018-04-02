@@ -7,7 +7,8 @@ module AvgAgeByPos
         # an array of players of that sport.
 
         def self.find_sport_and_players(sport_name)
-            sport = self.where("sport_name = ?", sport_name.capitalize)[0]
+            p sport_name
+            sport = self.find_by(sport_name: sport_name.capitalize)
             players = sport.players.sort_by { |player| player.id }
             return sport, players
         end

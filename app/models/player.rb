@@ -23,4 +23,5 @@ class Player < ApplicationRecord
     )
     
     include NameBrief
+
 end

@@ -19,5 +19,6 @@ class Sport < ApplicationRecord
         inverse_of: :sport,
         dependent: :destroy
     )
+    
     include AvgAgeByPos
 end
